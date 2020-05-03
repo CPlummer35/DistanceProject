@@ -62,17 +62,11 @@ class GroveUltrasonicRanger(object):
 Grove = GroveUltrasonicRanger
 
 @app.route('/')
-def main():
+def solve():
     from grove.helper import SlotHelper
     sh = SlotHelper(SlotHelper.GPIO)
-    pin = sh.argv2pin()
+    pin = sh.argv2pin(5)
 
-    sonar = GroveUltrasonicRanger(pin)
-
-    print('Detecting distance...')
-    while True:
-        print('{} cm'.format(sonar.get_distance()))
-        time.sleep(1)
-
+    sonar = GroveUltrasonicRanger()
 
     return '{}cm'.format(sonar.get_distance())
