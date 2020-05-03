@@ -65,7 +65,7 @@ Grove = GroveUltrasonicRanger
 def solve():
     from grove.helper import SlotHelper
     sh = SlotHelper(SlotHelper.GPIO)
-    pin = sh.argv2pin(5)
+    pin = 6
 
     sonar = GroveUltrasonicRanger()
 
